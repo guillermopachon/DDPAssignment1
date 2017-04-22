@@ -1,8 +1,8 @@
-# DDPAssignment1
+# Developing Data Products
 
-Week 2 Assignment
+## Week 2 Assignment
 
-## Instruccions
+### Instruccions
 
 - Create a web page using R Markdown that features a map created with Leaflet.
 
