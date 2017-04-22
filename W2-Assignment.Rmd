@@ -1,0 +1,33 @@
+---
+title: "April 22, 2017"
+output: html_document
+---
+
+#### Week 2 Assignment
+
+```{r, echo=FALSE, eval=TRUE}
+library(leaflet)
+
+sbIcon <- makeIcon(
+  iconUrl = "http://www.banderas.pro/banderas/bandera-colombia-3.gif",
+  iconWidth = 31*360/240/2, iconHeight = 31*240/360,
+  iconAnchorX = 16, iconAnchorY = 30
+)
+
+df <- data.frame(
+  lat = c(4.9281, 4.5981),
+  lng = c(-74.1738, -74.0759))
+
+pop = c(16200, 8081000)
+
+names = c("<a href='https://en.wikipedia.org/wiki/Subachoque'>Subachoque, Colombia</a><br/><small>Municipality in Colombia<br/>Pop: 16.200<br/>Subachoque is one of the 116 municipalities of the department of Cundinamarca, Colombia. It is located in the Province of Sabana Occidente at 45 km from Bogotá.</small>",
+           "<a href='https://en.wikipedia.org/wiki/Bogota'>Bogotá, Colombia</a><br/><small>Capital city of Colombia<br/>Pop: 8.081.000<br/>Bogotá, officially Bogotá, Distrito Capital (<i>Capital District</i>), abbreviated Bogotá, D.C. is the capital of the Republic of Colombia and the department of Cundinamarca.</small>")
+
+df %>%
+  leaflet() %>%
+  addTiles() %>%
+  addCircles(weight = 1, radius = sqrt(pop)* 6) %>%
+  addMarkers(icon=sbIcon, popup = names)
+```
+
+**Fig.** My Home, Guillermo Pachón, April 22, 2017.
